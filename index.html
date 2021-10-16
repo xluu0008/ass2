@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+    <!-- Import pure.css -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <!-- Google font -->
+   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  
+
+</head>
+<body>
+
+  <div class="page">
+
+   
+
+
+    <div class="pure-u-1">
+      <img src="https://raw.githubusercontent.com/xluu0008/ass2/main/banner.jpg" />
+  </div>
+       
+        <br>
+        <div class="pure-u-1">
+          <h2>Top 5 countries with the most Vaccinations September 2021</h2>        
+       
+           </div>
+  <!-- Line Chart -->    
+        <div class="pure-g">
+          <div class="pure-u-1-3">
+            <div class="description description-left">
+             
+              <p>The top five countries with the most cumulative vaccinations are China, India, United States, Brazil and the United Kingdom.
+                <br> <br> The total number of vaccinations is the cumulative total of doses or people receiving vaccinations. 
+             
+                <br><br> By clicking the country name on the legend, you can see the tendency of the total vaccinations for each of the country. 
+                </p>
+            </div>
+          </div>
+          <div class="pure-u-2-3">
+            <br>
+            <div id="vis2" class="vis-container"></div>
+          </div>
+      </div>
+  <!-- Line Chart end -->    
+
+        <hr class="hr3">
+
+
+        <div class="pure-u-1">
+          <h2>COVID-19 daily vaccine doses administered per million September 2021</h2>         
+           </div>
+       
+          <!-- Map -->   
+        <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis3" class="vis-container"></div>
+            </div>
+        </div>
+      <!-- Map end -->   
+        <br>
+        <hr class="hr3">
+        <div class="pure-u-1">
+          <h2>Share of the population fully vaccinated against COVID-19 September 2021</h2>         
+           </div>
+  <!-- Bar Chart -->    
+
+  <div class="pure-g">
+    <div class="pure-u-1-1 small-font">
+    <p>The normalized bar chart at the left-hand side shows the share of the population fully vaccinated for the top ten countries.
+       The dot chart at the right indicates the total vaccinations adopted by the ten countries. 
+     <br> <br>The share of the population fully vaccinated indicates the progress of achieving the goal of COVID-19 immunity and we can understand how much of the population is immune in each country. 
+      However, the countries with a higher share of the population fully vaccinated do not always have a higher fully vaccinated rate. By comparing the fully vaccinated rate and total vaccinations adopted, the vaccination efficiency for each country can be evaluated.
+      
+    </p>
+    </div>  
+  </div>   
+
+          <div class="pure-u-1">
+            <br>
+            <div id="vis4" class="vis-container"></div>
+       
+          </div>
+          <br>
+        
+  <!--Bar Chart end -->   
+  
+    <hr class="hr3">
+          <div class="pure-u-1">
+            <h2>Different COVID-19 Vaccines</h2>    
+              
+             </div>
+
+
+
+
+  <!-- Manufacturer -->    
+  <div class="pure-g">
+    <div class="pure-u-1-1 small-font">
+      <p> 
+        According to the latest market report from Technavio, the global vaccines market is contributed by the following types of vaccines. 
+        The percentage of the market share is rounded into integer.
+        Until 2021 September, the dominator in the global vaccines market is a German vaccine brand called PFIZER/BioNTech.</p>
+      </div>  
+    <div class="pure-u-1-3">
+      <br>
+      <br>
+      
+      
+      
+      <div id="vis5" class="vis-container"></div>
+    </div>
+    <div class="pure-u-2-3">
+ 
+      <br>
+      <div id="vis6" class="vis-container"></div>
+    </div>
+</div>
+<!-- Manufacturer end -->   
+
+<br>
+<br>
+<br>
+<br>
+<div class="pure-g">
+  <div class="pure-u-1-1 small-font">
+      <p>&copy; 2021 <a href="https://github.com/xluu0008/DataVisulization2" target="_blank">Xinyi Lu.</a>
+        The dashboard uses the data source from Kaggle named "COVID-19 World Vaccination Progress" uploaded by Gabriel Preda.</p>
+</div> 
+</div>
+
+</div>
+  
+<script type="text/javascript">
+  var specVis2= "https://raw.githubusercontent.com/xluu0008/ass2/main/line-chart-responsive.json";
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+
+  var specVis3= "https://raw.githubusercontent.com/xluu0008/ass2/main/choropleth_map.vg.json"; 
+   vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+
+  var specVis4= "https://raw.githubusercontent.com/xluu0008/ass2/main/bar-chart-responsive.json"; 
+   vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var specVis5= "https://raw.githubusercontent.com/xluu0008/ass2/main/pie.json"; 
+   vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+
+  var specVis6= "https://raw.githubusercontent.com/xluu0008/ass2/main/manufacturer.json"; 
+   vegaEmbed('#vis6', specVis6, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+</script>
+</body>
+</html>
