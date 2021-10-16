@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+ 
+
+  "data": {
+    "values": [3, 17, 10, 67,2]
+  },
+  "width": 320,
+  "height":220,
+  "layer": [{
+ 
+    "mark": {"type": "arc", "innerRadius": 20, "stroke": "#fff"}
+  },{
+    "mark": {"type": "text", "radiusOffset": 10},
+    "encoding": {
+      "text": {"field": "data", "type": "quantitative"}
+    }
+  }],
+  "encoding": {
+    "theta": {"field": "data", "type": "quantitative", "stack": true},
+    "radius": {"field": "data", "scale": {"type": "sqrt", "zero": true, "rangeMin": 40}},
+    "color": {"field": "data", "type": "nominal", "legend": null,
+    "scale": {
+      "domain": [
+        "3",
+        "17",
+        "10",
+        "67",
+        "2"
+       
+      
+      ],
+      "range": [
+        "#003B73",
+        "#0074B7",
+        "#60A3D9",
+        "#BFD7ED",
+        "#83BDC0",
+        "#A4E5E0",
+        "#37BEB0",  
+        "#0C6170"
+      
+       
+      ]
+    }},
+    "tooltip": [
+      {"field": "data", "type": "quantitative","title":"% of World Vaccines"}
+      
+   
+    ]
+  }
+}
+ 
+  

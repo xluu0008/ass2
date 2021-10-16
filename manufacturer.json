@@ -1,0 +1,154 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple radial chart with embedded data.",
+ "data": {
+    "url": "https://raw.githubusercontent.com/xluu0008/DataVisulization2/main/manufacturer.csv"
+  },
+ 
+  "hconcat": [{
+   
+  "width": 410,
+  "height":240,
+
+
+"mark": "bar",
+
+"encoding": {
+  "x": {
+    "field": "date",
+    "type": "temporal",
+    "title": null,
+ 
+    "timeUnit": "month"
+
+  
+  },
+  "y": {
+    "field": "total",
+    "aggregate": "mean",
+    
+    "title":"Total Vaccinations"
+   
+  },
+  
+  "color": {
+    "type": "nominal",
+    "field": "vaccine",
+    "scale": {
+      "domain": [
+ 
+        "Johnson",
+        "Moderna",
+        "Oxford",
+        "Pfizer",
+  
+        "Sinovac"
+
+       
+      ],
+      "range": [
+        "#003B73",
+        "#0074B7",
+        "#60A3D9",
+        "#BFD7ED",
+        "#83BDC0",
+        "#A4E5E0",
+        "#37BEB0",  
+        "#0C6170"
+
+       
+      ]
+    },
+    "title": "Vaccine Brand Name"        
+  },
+  "tooltip": [
+    {"field": "vaccine", "type": "nominal","title": "Vaccine"},
+    {"field": "date", "type": "temporal", "timeUnit": "month", "title": "Month"},
+    {"field": "total","type": "quantitative","title": "Total Vaccinations","format": ","}
+  ]
+},
+"layer": [
+  {
+    "selection": {
+      "country_highlight": {
+        "type": "multi",
+        "fields": ["vaccine"],
+        "bind": "legend"
+      }
+    },
+
+    "mark": "bar",
+
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title": null,
+  
+     
+        "timeUnit": "month"
+    
+      
+      },
+      "y": {
+        "field": "total",
+        "aggregate": "mean",
+        
+        "title":"Total Vaccinations"
+       
+      },
+   
+      "color": {
+        "type": "nominal",
+        "field": "vaccine",
+        "scale": {
+          "domain": [
+
+            "Johnson",
+            "Moderna",
+            "Oxford",
+            
+            "Pfizer",
+            "Sinovac"
+    
+           
+          ],
+          "range": [
+            "#003B73",
+            "#0074B7",
+            "#60A3D9",
+            "#BFD7ED",
+            "#83BDC0",
+            "#A4E5E0",
+            "#37BEB0",  
+            "#0C6170"
+    
+           
+          ]
+        },
+        "title": "Vaccine Brand Name"        
+      },
+      "opacity": {
+        "condition": {"selection": "country_highlight", "value": 1},
+        "value": 0
+      },
+      "tooltip": [
+        {"field": "vaccine", "type": "nominal","title": "Vaccine"},
+        {"field": "date", "type": "temporal", "timeUnit": "month", "title": "Month"},
+        {"field": "total","type": "quantitative","title": "Total Vaccinations","format": ","}
+      ]
+
+
+
+
+
+  }
+
+
+  }
+]
+}
+
+]
+  
+}
